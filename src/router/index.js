@@ -2,6 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import IndexPage from '@/components/IndexPage.vue'; 
 import AboutPage from '@/components/AboutPage.vue'; 
+import RequestPage from '@/components/RequestPage.vue';
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     path: '/about', 
     name: 'about',
     component: AboutPage,
+  },
+  {
+    path: '/request',
+    name: 'request',
+    component: RequestPage,
   },
 ];
 

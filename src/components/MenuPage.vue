@@ -3,7 +3,7 @@
     <ul>
       <li @click="navigateTo('/')"><router-link to="/">Home</router-link></li>
       <li @click="navigateTo('/about')"><router-link to="/about">About</router-link></li>
-      <li @click="navigateTo('/RequestAccess')"><a href="/RequestAccess">Request Access</a></li>
+      <li @click="navigateTo('/request')"><router-link to="/request">Request Access</router-link></li>
       <li @click="navigateTo('https://chat.ewnix.net')"><a href="https://chat.ewnix.net">Chat Now</a></li>
     </ul>
   </div>
