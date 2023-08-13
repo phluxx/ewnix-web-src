@@ -11,24 +11,50 @@
 
         <button type="submit" class="request-button">Request Access!</button>
       </form>
+      <div v-if="message" :class="messageStatus">{{ message }}</div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       username: '',
       email: '',
+      message: '',
+      messageStatus: '',
     };
   },
   methods: {
-    submitRequest() {
-      // Perform request logic here
-      console.log('Username:', this.username);
-      console.log('Email:', this.email);
-      // Send to backend
+    async submitRequest() {
+      console.log('Submitting request with Username:', this.username);
+      console.log('Submitting request with Email:', this.email);
+      try {
+        await axios.post('https://goladyp.ewnix.net/request', {
+          username: this.username,
+          email: this.email,
+        });
+
+        // Display success message
+        this.message = 'Request sent successfully!';
+        this.messageStatus = 'success';
+
+        // Clear the form fields
+        this.username = '';
+        this.email = '';
+      } catch (error) {
+        // Display specific error message from backend
+        if (error.response && error.response.data && error.response.data.message) {
+          this.message = `Error: ${error.response.data.message}`;
+        } else {
+          this.message = 'An unknown error occurred. Please try again later.';
+        }
+        this.messageStatus = 'error';
+        console.error('Error:', error);
+      }
     },
   },
 };
@@ -63,6 +89,14 @@ export default {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
 }
 </style>
 
