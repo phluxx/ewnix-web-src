@@ -66,6 +66,11 @@ export default {
       }
     },
     validateUsername() {
+      if (!this.username) {
+        this.usernameError = ''; // Clear the error message
+        return true;
+      }
+
       const usernamePattern = /^[A-Za-z][A-Za-z0-9_-]*$/;
       if (!usernamePattern.test(this.username) || this.username.length > 31) {
         this.usernameError = 'Invalid username format. Username must start with a letter and can contain letters, digits, underscores, and hyphens.';
