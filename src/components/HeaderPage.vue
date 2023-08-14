@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'PageTitle',
+  mounted() {
+    document.title = 'Ewnix Chat';
+  },
+}
+</script>
+
 <style scoped>
 /* Header CSS */
 .header {
