@@ -71,6 +71,11 @@ export default {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 150px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
 }
 
 .upload-button:hover {
@@ -85,6 +90,11 @@ export default {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 150px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
 }
 
 .image-label:hover {
