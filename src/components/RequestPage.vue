@@ -4,7 +4,7 @@
       <h2>Request Access</h2>
       <form @submit.prevent="submitRequest">
         <label for="username">Username:</label><br>
-        <input v-model="username" type="text" id="username" required pattern="[A-Za-z][A-Za-z0-9_-]{0,30}"><br><br>
+        <input v-model="username" type="text" id="username" required @blur="validateUsername"><br><br>
 
         <label for="email">E-mail:</label><br>
         <input v-model="email" type="email" id="email" required><br><br>
@@ -55,6 +55,22 @@ export default {
         }
         this.messageStatus = 'error';
         console.error('Error:', error);
+      }
+    },
+    validateUsername() {
+      const usernamePattern = /^[A-Za-z][A-Za-z0-9_-]*$/;
+      if (!usernamePattern.test(this.username)) {
+        // Invalid username format
+        this.message = 'Invalid username format. Username must start with a letter and can contain letters, digits, underscores, and hyphens.';
+        this.messageStatus = 'error';
+      } else if (this.username.length > 31) {
+        // Username is too long
+        this.message = 'Username is too long. Maximum length is 31 characters.';
+        this.messageStatus = 'error';
+      } else {
+        // Reset error message
+        this.message = '';
+        this.messageStatus = '';
       }
     },
   },
