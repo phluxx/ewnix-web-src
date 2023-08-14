@@ -9,7 +9,7 @@
         <label for="email">E-mail:</label><br>
         <input v-model="email" type="email" id="email" required><br><br>
 
-        <button type="submit" class="request-button">Request Access!</button>
+        <button type="submit" class="request-button" :disabled="isButtonDisabled">Request Access!</button>
       </form>
       <div v-if="message" :class="messageStatus">{{ message }}</div>
     </div>
@@ -27,6 +27,11 @@ export default {
       message: '',
       messageStatus: '',
     };
+  },
+  computed: {
+    isButtonDisabled() {
+      return !this.validateUsername();
+    },
   },
   methods: {
     async submitRequest() {
@@ -59,19 +64,10 @@ export default {
     },
     validateUsername() {
       const usernamePattern = /^[A-Za-z][A-Za-z0-9_-]*$/;
-      if (!usernamePattern.test(this.username)) {
-        // Invalid username format
-        this.message = 'Invalid username format. Username must start with a letter and can contain letters, digits, underscores, and hyphens.';
-        this.messageStatus = 'error';
-      } else if (this.username.length > 31) {
-        // Username is too long
-        this.message = 'Username is too long. Maximum length is 31 characters.';
-        this.messageStatus = 'error';
-      } else {
-        // Reset error message
-        this.message = '';
-        this.messageStatus = '';
+      if (!usernamePattern.test(this.username) || this.username.length > 31) {
+        return false;
       }
+      return true;
     },
   },
 };
