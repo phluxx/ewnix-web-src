@@ -2,7 +2,7 @@
   <div class="content">
     <div class="form-container">
       <h2>Avatar Upload</h2>
-<form @submit.prevent="handleSubmit">
+<form @submit.prevent="handleSubmit" action="https://gokarashta.ewnix.net/upload" method="post">
     <!-- Username Input -->
     <label for="username">Username:</label><br>
     <input type="text" id="username" v-model="username" required><br><br>
