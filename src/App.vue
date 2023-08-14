@@ -22,7 +22,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background-image: url('@/assets/background.jpeg');
+  background-image: url('https://sjc1.vultrobjects.com/ewnix-web/images/background.jpeg');
   background-size: cover;
   font-family: 'SF Pro Display', Arial, sans-serif;
 }
