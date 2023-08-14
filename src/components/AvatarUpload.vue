@@ -64,6 +64,8 @@ export default {
 
 <style scoped>
 .upload-button {
+  box-sizing: border-box;
+  margin: 0;
   background-color: rgba(76, 175, 80, 0.8);
   color: white;
   border: none;
@@ -83,6 +85,8 @@ export default {
 }
 
 .image-label {
+  box-sizing: border-box;
+  margin: 0;
   background-color: rgba(76, 175, 80, 0.8);
   color: white;
   border: none;
