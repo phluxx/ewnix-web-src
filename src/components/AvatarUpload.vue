@@ -18,6 +18,8 @@
     <!-- Submit Button -->
     <button type="submit" class="upload-button">Upload Avatar</button>
   </form>
+<div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div v-if="successMessage" class="success-message">{{ successMessage }}</div>
     </div>
   </div>
 </template>
@@ -31,6 +33,8 @@ export default {
       username: '',
       password: '',
       image: null,
+      errorMessage: '',
+      successMessage: '',
     };
   },
   methods: {
@@ -39,7 +43,7 @@ export default {
       const reader = new FileReader();
 
       reader.onload = (e) => {
-        this.image = e.target.result; // this will be a Base64 encoded string
+        this.image = e.target.result; // Base64 encoded string
       };
 
       reader.readAsDataURL(file);
@@ -53,14 +57,22 @@ export default {
         };
 
         const response = await axios.post('https://gokarashta.ewnix.net/upload', payload);
-        console.log(response.data);
+        if (response.data === 'Avatar uploaded!') {
+          this.successMessage = 'Avatar uploaded!';
+          this.errorMessage = '';
+        } else {
+          this.successMessage = '';
+          this.errorMessage = 'Authentication failed.';
+        }
       } catch (error) {
-        console.error("There was an error!", error);
+        this.successMessage = '';
+        this.errorMessage = 'An error occurred. Please try again later.';
       }
     },
   }
 }
 </script>
+
 
 <style scoped>
 .upload-button {
