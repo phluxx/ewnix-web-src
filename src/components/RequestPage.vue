@@ -46,8 +46,9 @@ export default {
         this.username = '';
         this.email = '';
       } catch (error) {
-        // Display specific error message from backend
-        if (error.response && error.response.data && error.response.data.message) {
+        if (error.response && error.response.status === 409) {
+          this.message = 'Username already exists. Try again!';
+        } else if (error.response && error.response.data && error.response.data.message) {
           this.message = `Error: ${error.response.data.message}`;
         } else {
           this.message = 'An unknown error occurred. Please try again later.';
