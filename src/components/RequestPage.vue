@@ -4,7 +4,7 @@
       <h2>Request Access</h2>
       <form @submit.prevent="submitRequest">
         <label for="username">Username:</label><br>
-        <input v-model="username" type="text" id="username" required pattern="[A-Za-z][A-Za-z0-9-_]*"><br><br>
+        <input v-model="username" type="text" id="username" required pattern="[A-Za-z][A-Za-z0-9_-]*"><br><br>
 
         <label for="email">E-mail:</label><br>
         <input v-model="email" type="email" id="email" required><br><br>
