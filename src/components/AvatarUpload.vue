@@ -52,7 +52,7 @@ export default {
           image: this.image,
         };
 
-        const response = await axios.post('/your-endpoint-here', payload);
+        const response = await axios.post('https://gokarashta.ewnix.net/upload', payload);
         console.log(response.data);
       } catch (error) {
         console.error("There was an error!", error);
