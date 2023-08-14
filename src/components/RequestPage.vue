@@ -4,7 +4,9 @@
       <h2>Request Access</h2>
       <form @submit.prevent="submitRequest">
         <label for="username">Username:</label><br>
-        <input v-model="username" type="text" id="username" required @blur="validateUsername"><br><br>
+        <input v-model="username" type="text" id="username" required @blur="validateUsername"><br>
+        <div v-if="usernameError" class="error">{{ usernameError }}</div>
+        <br>
 
         <label for="email">E-mail:</label><br>
         <input v-model="email" type="email" id="email" required><br><br>
@@ -26,6 +28,7 @@ export default {
       email: '',
       message: '',
       messageStatus: '',
+      usernameError: '',
     };
   },
   computed: {
@@ -65,9 +68,12 @@ export default {
     validateUsername() {
       const usernamePattern = /^[A-Za-z][A-Za-z0-9_-]*$/;
       if (!usernamePattern.test(this.username) || this.username.length > 31) {
+        this.usernameError = 'Invalid username format. Username must start with a letter and can contain letters, digits, underscores, and hyphens.';
         return false;
+      } else {
+        this.usernameError = ''; // Clear the error message
+        return true;
       }
-      return true;
     },
   },
 };
