@@ -13,7 +13,7 @@
     
     <!-- Image Upload -->
     <label for="image">Upload your avatar!</label><br>
-    <input type="file" id="image" @change="handleFileUpload" accept="image/*" class="image-select" required><br><br>
+    <input type="file" id="image" @change="handleFileUpload" accept="image/*" required><br><br>
     
     <!-- Submit Button -->
     <button type="submit" class="upload-button">Upload Avatar</button>
@@ -75,20 +75,6 @@ export default {
 
 .upload-button:hover {
   background-color: #4CAF50;
-}
-
-.image-select {
-  background-color: rgba(76, 175, 80, 0.8);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.image-select:hover {
-  .background-color: #4CAF50;
 }
 
 .content {
