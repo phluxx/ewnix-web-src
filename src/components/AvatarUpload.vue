@@ -77,7 +77,8 @@ export default {
   height: 40px;
   display: inline-block;
   text-align: center;
-  line-height: 40px;
+  line-height: 60px;
+  font-size: 16px;
 }
 
 .upload-button:hover {
@@ -98,7 +99,8 @@ export default {
   height: 40px;
   display: inline-block;
   text-align: center;
-  line-height: 40px;
+  line-height: 60px;
+  font-size: 16px;
 }
 
 .image-label:hover {
