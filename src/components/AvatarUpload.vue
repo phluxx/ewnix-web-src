@@ -77,7 +77,7 @@ export default {
   height: 40px;
   display: inline-block;
   text-align: center;
-  line-height: 60px;
+  line-height: 20px;
   font-size: 16px;
 }
 
@@ -99,7 +99,7 @@ export default {
   height: 40px;
   display: inline-block;
   text-align: center;
-  line-height: 60px;
+  line-height: 20px;
   font-size: 16px;
 }
 
