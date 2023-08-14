@@ -12,8 +12,8 @@
     <input type="password" id="password" v-model="password" required><br><br>
     
     <!-- Image Upload -->
-    <label for="image">Upload your avatar!</label><br>
-    <input type="file" id="image" @change="handleFileUpload" accept="image/*" required><br><br>
+    <input type="file" id="image" @change="handleFileUpload" accept="image/*" required style="display: none;">
+    <label for="image" class="upload-buttton">Choose Image</label>
     
     <!-- Submit Button -->
     <button type="submit" class="upload-button">Upload Avatar</button>
