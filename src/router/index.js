@@ -26,6 +26,11 @@ const routes = [
     name: 'avatar',
     component: AvatarUpload,
   },
+  {
+    path: '/resetpasswd',
+    name: 'resetpasswd',
+    component: 'ResetPassword',
+  },
 ];
 
 const router = createRouter({
