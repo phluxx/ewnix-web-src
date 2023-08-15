@@ -14,8 +14,8 @@
 	<!-- New Password Input -->
 	<label for="newPasssword">New Password:</label><br>
 	<input v-model="formData.newPassword" type="password" id="newPassword" name="newPassword" required><br><br>
-	<label for="confirmNewPassword">Confirm New Password:</label>
-	<input v-model="formData.confirmNewPassword" type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+	<label for="confirmNewPassword">Confirm New Password:</label><br>
+	<input v-model="formData.confirmNewPassword" type="password" id="confirmNewPassword" name="confirmNewPassword" required><br><br>
         
         <!-- Submit Button -->
         <button type="submit" class="reset-button">Change Password</button>
@@ -75,8 +75,6 @@ export default {
 
 <style scoped>
 .reset-button {
-  box-sizing: border-box;
-  margin: 0;
   background-color: rgba(76, 175, 80, 0.8);
   color: white;
   border: none;
@@ -84,8 +82,6 @@ export default {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 150px;
-  height: 40px;
   display: inline-block;
   text-align: center;
   line-height: 20px;
