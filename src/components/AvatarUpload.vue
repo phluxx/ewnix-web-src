@@ -46,7 +46,7 @@ export default {
 
         const response = await axios.post('https://gokarashta.ewnix.net/upload', formData);
         
-        if (response.data === 'Avatar uploaded!') {
+        if (response.data === 'Image uploaded successfully') {
           this.successMessage = 'Avatar uploaded!';
           this.errorMessage = '';
         } else {
