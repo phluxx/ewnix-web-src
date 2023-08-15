@@ -49,7 +49,7 @@ export default {
       }
 
       try {
-        const response = await axios.post('https://goldappwdreset.ewnix.net/reset', {
+        const response = await axios.post('https://goldapresetpwd.ewnix.net/reset', {
           username: this.formData.username,
           currentPassword: this.formData.currentPassword,
           newPassword: this.formData.newPassword,
