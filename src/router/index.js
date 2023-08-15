@@ -4,6 +4,7 @@ import IndexPage from '@/components/IndexPage.vue';
 import AboutPage from '@/components/AboutPage.vue'; 
 import RequestPage from '@/components/RequestPage.vue';
 import AvatarUpload from '@/components/AvatarUpload.vue';
+import PasswordReset from '@/components/PasswordReset.vue';
 
 const routes = [
   {
@@ -27,9 +28,9 @@ const routes = [
     component: AvatarUpload,
   },
   {
-    path: '/resetpasswd',
-    name: 'resetpasswd',
-    component: 'ResetPassword',
+    path: '/passwdreset',
+    name: 'passwdreset',
+    component: PasswordReset,
   },
 ];
 
