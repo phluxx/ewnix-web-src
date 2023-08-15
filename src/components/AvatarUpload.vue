@@ -2,23 +2,23 @@
   <div class="content">
     <div class="form-container">
       <h2>Avatar Upload</h2>
-<form @submit.prevent="handleSubmit" action="https://gokarashta.ewnix.net/upload" method="post">
-    <!-- Username Input -->
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" v-model="username" required><br><br>
-    
-    <!-- Password Input -->
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" v-model="password" required><br><br>
-    
-    <!-- Image Upload -->
-    <input type="file" id="image" @change="handleFileUpload" accept="image/*" required style="display: none;">
-    <label for="image" class="image-label">Choose Image</label><br><br>
-    
-    <!-- Submit Button -->
-    <button type="submit" class="upload-button">Upload Avatar</button>
-  </form>
-<div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <form @submit.prevent="handleSubmit" action="https://gokarashta.ewnix.net/upload" method="post">
+        <!-- Username Input -->
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" v-model="username" required><br><br>
+        
+        <!-- Password Input -->
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" v-model="password" required><br><br>
+        
+        <!-- Image Upload -->
+        <input ref="imageInput" type="file" id="image" @change="handleFileUpload" accept="image/*" required style="display: none;">
+        <label for="image" class="image-label">Choose Image</label><br><br>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="upload-button">Upload Avatar</button>
+      </form>
+      <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
       <div v-if="successMessage" class="success-message">{{ successMessage }}</div>
     </div>
   </div>
@@ -32,31 +32,20 @@ export default {
     return {
       username: '',
       password: '',
-      image: null,
       errorMessage: '',
       successMessage: '',
     };
   },
   methods: {
-    handleFileUpload(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        this.image = e.target.result; // Base64 encoded string
-      };
-
-      reader.readAsDataURL(file);
-    },
     async handleSubmit() {
       try {
-        const payload = {
-          username: this.username,
-          password: this.password,
-          image: this.image,
-        };
+        const formData = new FormData();
+        formData.append('username', this.username);
+        formData.append('password', this.password);
+        formData.append('image', this.$refs.imageInput.files[0]);
 
-        const response = await axios.post('https://gokarashta.ewnix.net/upload', payload);
+        const response = await axios.post('https://gokarashta.ewnix.net/upload', formData);
+        
         if (response.data === 'Avatar uploaded!') {
           this.successMessage = 'Avatar uploaded!';
           this.errorMessage = '';
@@ -69,10 +58,9 @@ export default {
         this.errorMessage = 'An error occurred. Please try again later.';
       }
     },
-  }
-}
+  },
+};
 </script>
-
 
 <style scoped>
 .upload-button {
@@ -135,11 +123,11 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.success {
+.success-message {
   color: green;
 }
 
-.error {
+.error-message {
   color: red;
 }
 </style>
