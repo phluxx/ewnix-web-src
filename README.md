@@ -1,25 +1,4 @@
-# ewnix-new-new
+# ewnix-web-src  
 
-## Project setup
-```
-yarn install
-```
+The source code for our website, utilizing the Vue.js framework.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# ewnix-web-src
