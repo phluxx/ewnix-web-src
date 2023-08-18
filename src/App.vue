@@ -24,7 +24,7 @@ body {
   padding: 0;
   background-image: url('https://sjc1.vultrobjects.com/ewnix-web/images/background.jpeg');
   background-size: cover;
-  font-family: 'SF Pro Display', Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 </style>
 
