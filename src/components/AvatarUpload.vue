@@ -74,7 +74,7 @@ export default {
   cursor: pointer;
   transition: background-color 0.3s;
   width: 150px;
-  height: 40px;
+  height: 80px;
   display: inline-block;
   text-align: center;
   line-height: 20px;
@@ -96,7 +96,7 @@ export default {
   cursor: pointer;
   transition: background-color 0.3s;
   width: 150px;
-  height: 40px;
+  height: 80px;
   display: inline-block;
   text-align: center;
   line-height: 20px;
