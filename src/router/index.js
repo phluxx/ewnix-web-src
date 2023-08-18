@@ -5,6 +5,7 @@ import AboutPage from '@/components/AboutPage.vue';
 import RequestPage from '@/components/RequestPage.vue';
 import AvatarUpload from '@/components/AvatarUpload.vue';
 import PasswordReset from '@/components/PasswordReset.vue';
+import StaffPage from '@/components/StaffPage.vue';
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/passwdreset',
     name: 'passwdreset',
     component: PasswordReset,
+  },
+  {
+    path: '/staff',
+    name: 'staff',
+    component: StaffPage,
   },
 ];
 
