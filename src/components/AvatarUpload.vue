@@ -74,11 +74,11 @@ export default {
   cursor: pointer;
   transition: background-color 0.3s;
   width: 150px;
-  height: 80px;
+  height: 40px;
   display: inline-block;
   text-align: center;
   line-height: 20px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .upload-button:hover {
@@ -96,11 +96,11 @@ export default {
   cursor: pointer;
   transition: background-color 0.3s;
   width: 150px;
-  height: 80px;
+  height: 40px;
   display: inline-block;
   text-align: center;
   line-height: 20px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .image-label:hover {
