@@ -4,7 +4,7 @@
 	<p>CEO: <a class="content-link" href="mailto:phlux@ewnix.net">phluxeternus</a></p>
 	<p>Development Operations/Systems Engineer: <a class="content-link" href="mailto:steefbew@ewnix.net">steefbew</a></p>
         <p>Systems Engineer: <a class="content-link" href="mickeyb@ewnix.net">mickeyb</a></p>
-	<p>Development Operations: <a class="content-link" href="mailto:werneta@ewnix.net">werneta</a></p>
+	<p>Development Operations (Consulting): <a class="content-link" href="mailto:werneta@ewnix.net">werneta</a></p>
 	<p>Quality Assurance (Development): <a class="content-link" href="mailto:karashta@ewnix.net">karashta</a></p>
         <p>Quality Assurance (Development): <a class="content-link" href="mailto:ladyphlux@ewnix.net">ladyphluxeternus</a></p>
 	<p>Quality Assurance (Staging): <a class="content-link" href="mailto:phr0z3n@ewnix.net">phr0z3n</a></p>
