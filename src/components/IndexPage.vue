@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <p>Welcome to the Ewnix Chat Server's home page!</p>
-    <p>Ewnix is an LDAP-authenticated IRCv3 server aimed at bringing you the most unique, fun, and new IRCv3 features available today. To request access, please <a class="content-link" href="https://ldap.ewnix.net/request">click here</a> or select the appropriate menu item to your right. To learn more about us, please see the <a class="content-link" href="/about">About</a> page!</p>
+    <p>Ewnix is an LDAP-authenticated IRCv3 server aimed at bringing you the most unique, fun, and new IRCv3 features available today. To request access, please <router-link to="/request">click here</router-link> or select the appropriate menu item to your right. To learn more about us, please see the <router-link to="/about">About</router-link> page!</p>
 	<p>We look forward to seeing you soon!</p>
   </div>
 </template>
