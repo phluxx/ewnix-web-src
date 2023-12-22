@@ -22,7 +22,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background-image: url('https://sjc1.vultrobjects.com/ewnix-web/images/background.jpeg');
+  background-image: url('https://f005.backblazeb2.com/file/ewnix-web/background.jpeg');
   background-size: cover;
   font-family: 'Poppins', Arial, sans-serif;
 }
