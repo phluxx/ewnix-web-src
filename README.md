@@ -13,7 +13,3 @@ The source code for our website, utilizing the Vue.js framework.
 `yarn build`  
 
 `cp -r dist /path/to/www/files` 
-
-This repo *should* push to ghcr.io/ewnix-chat/ewnix-web-src:main  
-
-Sometimes it doesn't (:
