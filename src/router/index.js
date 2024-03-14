@@ -6,6 +6,7 @@ import RequestPage from '@/components/RequestPage.vue';
 import AvatarUpload from '@/components/AvatarUpload.vue';
 import PasswordReset from '@/components/PasswordReset.vue';
 import StaffPage from '@/components/StaffPage.vue';
+import SignUpPage from '@/components/SignUpPage.vue';
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: '/staff',
     name: 'staff',
     component: StaffPage,
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: SignUpPage,
   },
 ];
 

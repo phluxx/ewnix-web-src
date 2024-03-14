@@ -4,7 +4,7 @@
       <li @click="navigateTo('/')"><router-link to="/">Home</router-link></li>
       <li @click="navigateTo('/about')"><router-link to="/about">About</router-link></li>
       <li @click="navigateTo('/staff')"><router-link to="/staff">Staff</router-link></li>
-      <li @click="navigateTo('https://auth.ewnix.net/if/flow/enrollment/')"><router-link to="https://auth.ewnix.net/if/flow/enrollment/">Sign Up</router-link></li>
+      <li @click="navigateTo('/signup')"><router-link to="/signup">Sign Up</router-link></li>
       <li @click="navigateTo('https://webchat.ewnix.net')"><a href="https://webchat.ewnix.net">Chat Now</a></li>
     </ul>
   </div>
