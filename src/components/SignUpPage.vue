@@ -111,8 +111,6 @@ export default {
 }
 .signup-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
@@ -132,6 +130,10 @@ input {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+label {
+  margin-bottom: 5px;
 }
 
 .error-message {
