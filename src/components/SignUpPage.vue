@@ -107,13 +107,21 @@ export default {
   height: 100vh;
 }
 
+form {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 .form-group {
   margin-bottom: 20px;
 }
 
 input {
+  width: 100%;
+  padding: 8px;
   border-radius: 5px;
-  padding: 5px;
   border: 1px solid #ccc;
 }
 
@@ -121,7 +129,12 @@ input {
   color: red;
 }
 
+.success-message {
+  color: green;
+}
+
 button {
+  width: 100%;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
@@ -131,5 +144,6 @@ button {
 button:hover {
   background-color: #388E3C;
 }
+
 </style>
 
