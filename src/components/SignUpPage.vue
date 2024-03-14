@@ -1,8 +1,10 @@
 <template>
-  <div class="signup-container">
+  <div class="content">
     <h2>Sign Up</h2>
     Usernames must begin with a letter, can only contain letters, numbers, and the characters -_^<br>
     Passwords must be a minimum of 12 characters long.<br>
+  </div>
+  <div class="signup-container">
     <form @submit.prevent="submitForm">
       <div class="form-group">
         <label for="username">Username:</label>
@@ -100,6 +102,13 @@ export default {
 </script>
 
 <style scoped>
+.content {
+  margin-top: 30px;
+  margin-right: 220px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
 .signup-container {
   display: flex;
   justify-content: center;
@@ -119,7 +128,7 @@ form {
 }
 
 input {
-  width: 100%;
+  width: 80%;
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
