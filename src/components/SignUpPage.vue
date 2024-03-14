@@ -52,48 +52,48 @@ export default {
   },
   methods: {
     validateUsername() {
-	    const regex = /^[a-zA-Z][a-zA-Z0-0\-_^]{0,31}$/;
-	    this.isUsernameValid = regex.test(this.username) && !/\s/.test(this.username);
+            const regex = /^[a-zA-Z][a-zA-Z0-0\-_^]{0,31}$/;
+            this.isUsernameValid = regex.test(this.username) && !/\s/.test(this.username);
     },
     validatePassword() {
-	    this.isPasswordValid = this.password.length >= 12 && !/\s/.test(this.password);
+            this.isPasswordValid = this.password.length >= 12 && !/\s/.test(this.password);
     },
     validatePasswordVerify() {
-	    this.isPasswordVerifyValid = this.password === this.passwordVerify;
+            this.isPasswordVerifyValid = this.password === this.passwordVerify;
     },
     validateEmail() {
-	    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	    this.isEmailValid = regex.test(this.email);
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            this.isEmailValid = regex.test(this.email);
     },
     submitForm() {
-	    const formData = {
-		    username: this.username,
-		    email: this.email,
-		    password: this.password
-	    };
+            const formData = {
+                    username: this.username,
+                    email: this.email,
+                    password: this.password
+            };
 
-	    fetch('https://auth.ewnix.net/api/v3/flows/executor/enrollment/', {
-		    method: 'POST',
-		    headers: {
-			    'Content-Type': 'application/json'
-		    },
-		    body: JSON.stringify(formData)
-	    })
+            fetch('https://auth.ewnix.net/api/v3/flows/executor/enrollment/', {
+                    method: 'POST',
+                    headers: {
+                            'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+            })
 
-		    .then(response => {
-			    if (response.ok) {
-				    this.registrationMessage = 'Your registration has been submitted. Please check your email to activate your account';
-				    this.isRegistrationSuccess = true;
-			    } else {
-				    this.registrationMessage = 'An error occurred during registration. Please email support@ewnix.net for assistance.';
-				    this.isRegistrationSuccess - false;
-			    }
-		    })
-		    .catch(error => {
-			    console.error('Error:', error);
-			    this.registrationMessage = 'An error occurred during registration. Please try again later or email support@ewnix.net for assistance.';
-			    this.isRegistrationSuccess = false;
-		    });
+                    .then(response => {
+                            if (response.ok) {
+                                    this.registrationMessage = 'Your registration has been submitted. Please check your email to activate your account';
+                                    this.isRegistrationSuccess = true;
+                            } else {
+                                    this.registrationMessage = 'An error occurred during registration. Please email support@ewnix.net for assistance.';
+                                    this.isRegistrationSuccess - false;
+                            }
+                     })
+                    .catch(error => {
+                            console.error('Error:', error);
+                            this.registrationMessage = 'An error occurred during registration. Please try again later or email support@ewnix.net for assistance.';
+                            this.isRegistrationSuccess = false;
+                     });
     }
   }
 };
